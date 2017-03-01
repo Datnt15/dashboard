@@ -104,7 +104,7 @@
 
 
 					<div class="table-responsive" id="my-table">
-						<table class="table datatable-columns table-striped">
+						<table class="table datatable-columns table-striped table-hover datatable-basic datatable-select-multiple dataTable">
 							<thead>
 								<tr>
 									<th>Internal host</th>
