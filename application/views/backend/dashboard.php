@@ -37,7 +37,7 @@
 			</div>
 		</div>
 		<!-- /custom markers -->
-		
+
 		<div class="row list">
 			<div class="col-lg-6 list-item">
 				
@@ -71,7 +71,7 @@
 						<div class="heading-elements">
 							<ul class="icons-list">
 		                		<li><a data-action="collapse"></a></li>
-		                		<li><a data-action="reload"></a></li>
+		                		<!-- <li><a data-action="reload"></a></li> -->
 		                		<li><a data-action="close"></a></li>
 		                	</ul>
 	                	</div>
@@ -92,7 +92,14 @@
 			<div class="col-lg-6 list-item">
 				<div class="panel panel-flat">
 					<div class="panel-heading">
-						<h6 class="panel-title">Unexpected Connections</h6>
+						<h5 class="panel-title">Unexpected Connections</h5>
+						<div class="heading-elements">
+							<ul class="icons-list">
+		                		<li><a data-action="collapse"></a></li>
+		                		<!-- <li><a data-action="reload"></a></li> -->
+		                		<li><a data-action="close"></a></li>
+		                	</ul>
+	                	</div>
 					</div>
 
 
@@ -103,7 +110,7 @@
 									<th>Internal host</th>
 									<th>Events</th>
 									<th>Name</th>
-									<th>Fisrt</th>
+									<th>First</th>
 									<th>Last</th>
 									<th>Impact</th>
 								</tr>
