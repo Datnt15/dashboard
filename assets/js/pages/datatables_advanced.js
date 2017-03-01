@@ -37,6 +37,11 @@ $(function() {
         }
     });
 
+    // Enable Select2 select for the length option
+    // $('.datatable-columns select').select2({
+            //     minimumResultsForSearch: Infinity,
+            //     width: 'auto'
+            // });
 
 
     // Columns rendering
