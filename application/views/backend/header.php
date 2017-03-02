@@ -55,7 +55,7 @@
 	<script type="text/javascript" src="assets/js/charts/d3/venn/venn_interactive.js"></script>
 	<script type="text/javascript" src="assets/js/charts/d3/venn/venn_tooltip.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
-	<!-- <script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script> -->
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/tables/datatables/datatables.min.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/ui/headroom/headroom.min.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/ui/headroom/headroom_jquery.min.js"></script>
@@ -124,6 +124,7 @@
 	<script type="text/javascript" src="assets/js/pages/dashboard_main.js"></script>
 	<script type="text/javascript" src="assets/js/maps/vector/vector_maps_demo.js"></script>
 	<!-- <script type="text/javascript" src="assets/js/plugins/ui/ripple.min.js"></script> -->
+	<!-- <script type="text/javascript" src="assets/js/set-height.js"></script> -->
 	<!-- /theme JS files -->
 
 
@@ -151,32 +152,32 @@
 				<li>
 					<a href="<?php echo base_url(); ?>">
 						<i class="icon-display4 position-left"></i> 
-						Bảng điều khiển
+						Dashboard
 					</a>
 				</li>
 				<li>
 					<a href="<?php echo base_url() . "index.php/listing"; ?>">
 						<i class="fa fa-user-secret position-left"></i>
-						Các mối đe dọa APT						 
+						APT	Threats
 					</a>
 				</li>
 
 				<li>
 					<a href="./index.php/report">
 						<i class="fa fa-file-text-o position-left"></i> 
-						Báo cáo
+						Report
 					</a>
 				</li>
 				<li>
 					<a href="#">
 						<i class="fa fa-gears position-left"></i>
-						Cấu hình hệ thống				 
+						Setting				 
 					</a>
 				</li>
 				<li>
 					<a href="#">
 						<i class="fa fa-volume-control-phone position-left" aria-hidden="true"></i>
-						Hỗ trợ				 
+						Contact
 					</a>
 				</li>
 			</ul>

@@ -9,11 +9,11 @@
 		<!-- Custom markers -->
 		<div class="panel panel-flat">
 			<div class="panel-heading">
-				<h4 class="panel-title text-center">Top 10 countries detected of cyber attack on Vietnam</h4>
+				<h1 class="panel-title text-center">Top 10 countries detected of cyber attack on Vietnam</h1>
 				<div class="heading-elements">
 					<ul class="icons-list">
                 		<li><a data-action="collapse"></a></li>
-                		<li><a data-action="reload"></a></li>
+                		<!-- <li><a data-action="reload"></a></li> -->
                 		<li><a data-action="close"></a></li>
                 	</ul>
             	</div>
@@ -39,16 +39,16 @@
 		<!-- /custom markers -->
 
 		<div class="row list">
-			<div class="col-lg-6 list-item">
+			<div class="col-lg-6 col-xs-12 list-item">
 				
 				<!-- Basic bar chart -->
 				<div class="panel panel-flat">
 					<div class="panel-heading">
-						<h6 class="panel-title text-semibold">Events statistics</h6>
+						<h2 class="panel-title">Events statistics</h2>
 						<div class="heading-elements">
 							<ul class="icons-list">
 		                		<li><a data-action="collapse"></a></li>
-		                		<li><a data-action="reload"></a></li>
+		                		<!-- <li><a data-action="reload"></a></li> -->
 		                		<li><a data-action="close"></a></li>
 		                	</ul>
 	                	</div>
@@ -63,11 +63,11 @@
 				<!-- /basic bar chart -->
 				
 			</div>
-			<div class="col-lg-6 list-item">
+			<div class="col-lg-6 col-xs-12 list-item">
 				<!-- Pie chart timeline -->
 				<div class="panel panel-flat">
 					<div class="panel-heading">
-						<h5 class="panel-title">Top 10 malwares</h5>
+						<h2 class="panel-title">Top 10 malwares</h2>
 						<div class="heading-elements">
 							<ul class="icons-list">
 		                		<li><a data-action="collapse"></a></li>
@@ -89,10 +89,10 @@
 
 		<!-- Marketing campaigns -->
 		<div class="row list">
-			<div class="col-lg-6 list-item">
+			<div class="col-lg-6 col-xs-12 list-item">
 				<div class="panel panel-flat">
 					<div class="panel-heading">
-						<h5 class="panel-title">Unexpected Connections</h5>
+						<h2 class="panel-title">Unexpected Connections</h2>
 						<div class="heading-elements">
 							<ul class="icons-list">
 		                		<li><a data-action="collapse"></a></li>
@@ -104,7 +104,7 @@
 
 
 					<div class="table-responsive" id="my-table">
-						<table class="table datatable-columns table-striped table-hover datatable-basic datatable-select-multiple dataTable">
+						<table class="table datatable-columns table-striped table-hover datatable-basic datatable-select-multiple dataTable table-responsive">
 							<thead>
 								<tr>
 									<th>Internal host</th>
@@ -160,15 +160,15 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-6 list-item">
+			<div class="col-lg-6 col-xs-12 list-item">
 				<!-- Non-ribbon chord -->
 				<div class="panel panel-flat">
 					<div class="panel-heading">
-						<h5 class="panel-title">Top connected domains </h5>
+						<h2 class="panel-title">Top connected domains </h2>
 						<div class="heading-elements">
 							<ul class="icons-list">
 		                		<li><a data-action="collapse"></a></li>
-		                		<li><a data-action="reload"></a></li>
+		                		<!-- <li><a data-action="reload"></a></li> -->
 		                		<li><a data-action="close"></a></li>
 		                	</ul>
 	                	</div>

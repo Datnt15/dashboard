@@ -52,12 +52,13 @@ $(function () {
                     }
                 },
 
-                // Add legend
-                legend: {
-                    orient: 'vertical',
-                    x: 'left',
-                    data: legend_data
-                },
+                // // Add legend
+// legend: {
+//     orient: 'vertical',
+//     x: 'left',
+//     data: legend_data
+// },
+
 
                 // Add series
                 series: [
