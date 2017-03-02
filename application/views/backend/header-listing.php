@@ -35,16 +35,17 @@
 	<!-- /core JS files -->
 
 	<!-- Theme JS files -->
+	<script type="text/javascript" src="assets/js/core/app.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/velocity/velocity.min.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/velocity/velocity.ui.min.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/buttons/spin.min.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/tables/datatables/datatables.min.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
-	<script type="text/javascript" src="assets/js/core/app.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/buttons/ladda.min.js"></script>
 	<script type="text/javascript" src="assets/js/pages/components_buttons.js"></script>
 	<script type="text/javascript" src="assets/js/jspdf.min.js"></script>
 	<script type="text/javascript" src="assets/js/html2canvas.min.js"></script>
+
 	<!-- /theme JS files -->
 	<script type="text/javascript">
 	$(function() {
@@ -82,7 +83,6 @@
 
 	});
 	</script>
-
 </head>
 <body>
 	<!-- Main navbar -->

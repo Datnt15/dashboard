@@ -65,23 +65,28 @@ class Report extends CI_Controller {
 								$name = '';
 								$impact = 100;
 								$name = $mal['name'];
+								$tr_class = '';
 								if (isset($mal['impact'])) {
 									$impact = $mal['impact'];
 								}
 								$label_class = "label-";
 								if ($impact < 40) {
 									$label_class .= "success";
+									$tr_class = "success";
 								}
 								elseif($impact < 60){
 									$label_class .= "info";
+									$tr_class = "info";
 								}
 								elseif($impact < 80){
 									$label_class .= "warning";
+									$tr_class = "warning";
 								}else{
 									$label_class .= "danger";
+									$tr_class = "danger";
 								}
 								?>
-								<tr data-id="<?php echo (string) $mal['_id']; ?>">
+								<tr class="<?php echo $tr_class; ?>" data-id="<?php echo (string) $mal['_id']; ?>">
 									<td><?php echo $name;?></td>
 									<td><?php echo $incident['count'];?></td>
 									<td><?php echo @date("Y-m-d H:i", $incident['firstseen']->sec);?></td>
@@ -99,13 +104,34 @@ class Report extends CI_Controller {
 					</table>
 					<p></p>
 					<div class="mal_info">
-						<p>Name: <?php echo $malwares[0]['name'];?></p>
-						<p>References: <?php echo implode(", ", $malwares[0]['references']);?></p>
-						<p>Tags: <?php echo implode(", ", $malwares[0]['tags']);?></p>
-						<p>Groups: <?php echo isset($malwares[0]['in_group']) ? $malwares[0]['in_group'] : "";?></p>
-						<p>Industries: <?php echo implode(", ", $malwares[0]['industries']);?></p>
-						<p>Targeted Countries: <?php echo implode(", ", $malwares[0]['targeted_countries']);?></p>
-						<p>Description: <?php echo $malwares[0]['description'];?></p>
+						<p>
+							<strong>Name</strong>: 
+							<?php echo $malwares[0]['name'];?>
+						</p>
+						<p>
+							<strong>References</strong>: 
+							<?php echo implode(", ", $malwares[0]['references']);?>
+						</p>
+						<p>
+							<strong>Tags</strong>: 
+							<?php echo implode(", ", $malwares[0]['tags']);?>
+						</p>
+						<p>
+							<strong>Groups</strong>: 
+							<?php echo isset($malwares[0]['in_group']) ? $malwares[0]['in_group'] : "";?>
+						</p>
+						<p>
+							<strong>Industries</strong>: 
+							<?php echo implode(", ", $malwares[0]['industries']);?>
+						</p>
+						<p>
+							<strong>Targeted Countries</strong>: 
+							<?php echo implode(", ", $malwares[0]['targeted_countries']);?>
+						</p>
+						<p>
+							<strong>Description</strong>: 
+							<?php echo $malwares[0]['description'];?>
+						</p>
 					</div>
 				</div>
 			</div>

@@ -82,7 +82,7 @@
 
 							<div class="tab-pane fade" id="fade-tab2">
 								<div class="table-responsive col-lg-8">
-									<table class="table datatable-columns table-striped">
+									<table class="table table-striped">
 										<thead>
 											<tr>
 												<th>Timestamp</th>
