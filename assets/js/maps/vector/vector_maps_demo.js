@@ -28,11 +28,11 @@ $(function() {
         markerStyle: {
             initial: {
                 r: 5,
-                'fill': '#f00',
+                'fill': '#EBF01E',
                 'fill-opacity': 0.8,
                 'stroke': '#fff',
                 'stroke-width': 1.5,
-                'style': '-webkit-animation: fade 1s infinite; -moz-animation: fade 1s infinite; -o-animation: fade 1s infinite;',
+                'style': '-webkit-animation: fade 2s infinite; -moz-animation: fade 2s infinite; -o-animation: fade 2s infinite;',
                 'stroke-opacity': 0.9
             },
             hover: {

@@ -100,30 +100,26 @@ class Listing extends CI_Controller {
 		if ($id != NULL) {
 			$id = new MongoId($id);
 
-			$event = $this->mongo_db->where(array('_id' => $id))->get('events');
-			if ($event[0]['type'] == 'dns') { ?>
-				<div class="col-lg-12">
-					<p>Type: <?php echo isset($event[0]['type']) ? $event[0]['type'] : "";?></p>
-					<p>Query: <?php echo isset($event[0]['query']) ? $event[0]['query'] : "";?></p>
-					<p>Internal host: <?php echo isset($event[0]['orig_h']) ? $event[0]['orig_h'] : "";?></p>
-					<p>Connected IP: <?php echo isset($event[0]['resp_h']) ? $event[0]['resp_h'] : "";?></p>
+			$event = $this->mongo_db->where(array('_id' => $id))->get('events'); ?>
+			<div class="row">
+				<div class="col-lg-6">
+					<h6>Type: <?php echo isset($event[0]['type']) ? $event[0]['type'] : "";?></h6>
+					<h6>Method: <?php echo isset($event[0]['method']) ? $event[0]['method'] : "";?></h6>
+					<h6>Uri: <?php echo isset($event[0]['uri']) ? $event[0]['uri'] : "";?></h6>
+					<h6>Host: <?php echo isset($event[0]['host']) ? $event[0]['host'] : "";?></h6>
+					<h6>User Agent: <?php echo isset($event[0]['user_agent']) ? $event[0]['user_agent'] : "";?></h6>
+					<h6>Status Code: <?php echo isset($event[0]['status_code']) ? $event[0]['status_code'] : "";?></h6>
+					<h6>Referrer: <?php echo isset($event[0]['referrer']) ? $event[0]['referrer'] : "";?></h6>
+					<h6>Internal host: <?php echo isset($event[0]['orig_h']) ? $event[0]['orig_h'] : "";?></h6>
+					<h6>Connected IP: <?php echo isset($event[0]['resp_h']) ? $event[0]['resp_h'] : "";?></h6>
 				</div>
-
-			<?php } else { ?>
-
-				<div class="col-lg-12">
-					<p>Type: <?php echo isset($event[0]['type']) ? $event[0]['type'] : "";?></p>
-					<p>Method: <?php echo isset($event[0]['method']) ? $event[0]['method'] : "";?></p>
-					<p>Uri: <?php echo isset($event[0]['uri']) ? $event[0]['uri'] : "";?></p>
-					<p>Host: <?php echo isset($event[0]['host']) ? $event[0]['host'] : "";?></p>
-					<p>User Agent: <?php echo isset($event[0]['user_agent']) ? $event[0]['user_agent'] : "";?></p>
-					<p>Status Code: <?php echo isset($event[0]['status_code']) ? $event[0]['status_code'] : "";?></p>
-					<p>Referrer: <?php echo isset($event[0]['referrer']) ? $event[0]['referrer'] : "";?></p>
-					<p>Internal host: <?php echo isset($event[0]['orig_h']) ? $event[0]['orig_h'] : "";?></p>
-					<p>Connected IP: <?php echo isset($event[0]['resp_h']) ? $event[0]['resp_h'] : "";?></p>
+				<div class="col-lg-6">
+					<h6>Type: <?php echo isset($event[0]['type']) ? $event[0]['type'] : "";?></h6>
+					<h6>Query: <?php echo isset($event[0]['query']) ? $event[0]['query'] : "";?></h6>
+					<h6>Internal host: <?php echo isset($event[0]['orig_h']) ? $event[0]['orig_h'] : "";?></h6>
+					<h6>qtype_name: <?php echo isset($event[0]['qtype_name']) ? $event[0]['qtype_name'] : "";?></h6>
 				</div>
-
-			<?php }
-		}
+			</div>
+		<?php }
 	}
 }
