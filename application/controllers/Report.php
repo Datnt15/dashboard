@@ -166,15 +166,30 @@ class Report extends CI_Controller {
 
 
 	public function  weekly($type = 'host'){
-		$this->host();		
+		if ($type == 'host') {
+			$this->host();		
+		}
+		else{
+			$this->malware();
+		}
 	}
 
 	public function monthly($type = 'host'){
-		$this->host();
+		if ($type == 'host') {
+			$this->host();		
+		}
+		else{
+			$this->malware();
+		}
 	}
 
 	public function yearly($type = 'host'){
-		$this->host();		
+		if ($type == 'host') {
+			$this->host();		
+		}
+		else{
+			$this->malware();
+		}	
 	}
 
 	public function test(){
