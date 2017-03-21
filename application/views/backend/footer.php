@@ -1,3 +1,5 @@
+				</div>
+				<!-- /content-wraper -->
 			</div>
 			<!-- /page content -->
 			

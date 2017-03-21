@@ -1,156 +1,153 @@
-<!-- Main content -->
-<div class="content-wrapper">
 
-	<!-- Content area -->
-	<div class="content">
-		<div class="row list">
-			
-			<div class="panel panel-flat">
-				<div class="panel-heading">
-					<h6 class="panel-title">Listing</h6>
-				</div>
+<!-- Content area -->
+<div class="content">
+	<div class="row list">
+		
+		<div class="panel panel-flat">
+			<div class="panel-heading">
+				<h6 class="panel-title">Listing</h6>
+			</div>
 
-				<div class="panel-body">
-					<div class="tabbable">
-						<ul class="nav nav-tabs nav-tabs-highlight">
-							<li class="active">
-								<a href="#fade-tab1" data-toggle="tab">Incidents</a>
-								</li>
-							<li>
-								<a href="#fade-tab2" data-toggle="tab">Events</a>
+			<div class="panel-body">
+				<div class="tabbable">
+					<ul class="nav nav-tabs nav-tabs-highlight">
+						<li class="active">
+							<a href="#fade-tab1" data-toggle="tab">Incidents</a>
 							</li>
-						</ul>
+						<li>
+							<a href="#fade-tab2" data-toggle="tab">Events</a>
+						</li>
+					</ul>
 
-						<div class="tab-content">
-							<div class="tab-pane fade in active" id="fade-tab1">
-								<div class="table-responsive" id="my-table">
-									<table class="table datatable-columns table-striped">
-										<thead>
+					<div class="tab-content">
+						<div class="tab-pane fade in active" id="fade-tab1">
+							<div class="table-responsive" id="my-table">
+								<table class="table datatable-columns table-striped">
+									<thead>
+										<tr>
+											<th>Internal host</th>
+											<th>Events</th>
+											<th>Name</th>
+											<th>Fisrt</th>
+											<th>Last</th>
+											<th>Impact</th>
+										</tr>
+									</thead>
+									<tbody>
+
+										<?php foreach ($incidents as $incident) {
+											$name_data = $this->mongo_db->where(array('id' => $incident['rule']))->find_one('mf');
+											$name = '';
+											$impact = 100;
+											if (!empty($name_data)) {
+												$name = $name_data['name'];
+												if (isset($name_data['impact'])) {
+													$impact = $name_data['impact'];
+												}
+											}
+											$label_class = "label-";
+											if ($impact < 40) {
+												$label_class .= "success";
+											}
+											elseif($impact < 60){
+												$label_class .= "info";
+											}
+											elseif($impact < 80){
+												$label_class .= "warning";
+											}else{
+												$label_class .= "danger";
+											}
+											?>
 											<tr>
-												<th>Internal host</th>
-												<th>Events</th>
-												<th>Name</th>
-												<th>Fisrt</th>
-												<th>Last</th>
-												<th>Impact</th>
+												<td><?php echo $incident['src_ip'];?></td>
+												<td><?php echo $incident['count'];?></td>
+												<td><?php echo $name;?></td>
+												<td><?php echo @date("Y-m-d H:i", $incident['firstseen']->sec);?></td>
+												<td><?php echo @date("Y-m-d H:i", $incident['lastseen']->sec);?></td>
+												<td>
+													<h4>
+														<span class="label <?php echo $label_class; ?>">
+															<?php echo $impact;?>
+														</span>
+													</h4>
+												</td>
 											</tr>
-										</thead>
-										<tbody>
-
-											<?php foreach ($incidents as $incident) {
-												$name_data = $this->mongo_db->where(array('id' => $incident['rule']))->find_one('mf');
-												$name = '';
-												$impact = 100;
-												if (!empty($name_data)) {
-													$name = $name_data['name'];
-													if (isset($name_data['impact'])) {
-														$impact = $name_data['impact'];
-													}
-												}
-												$label_class = "label-";
-												if ($impact < 40) {
-													$label_class .= "success";
-												}
-												elseif($impact < 60){
-													$label_class .= "info";
-												}
-												elseif($impact < 80){
-													$label_class .= "warning";
-												}else{
-													$label_class .= "danger";
-												}
-												?>
-												<tr>
-													<td><?php echo $incident['src_ip'];?></td>
-													<td><?php echo $incident['count'];?></td>
-													<td><?php echo $name;?></td>
-													<td><?php echo @date("Y-m-d H:i", $incident['firstseen']->sec);?></td>
-													<td><?php echo @date("Y-m-d H:i", $incident['lastseen']->sec);?></td>
-													<td>
-														<h4>
-															<span class="label <?php echo $label_class; ?>">
-																<?php echo $impact;?>
-															</span>
-														</h4>
-													</td>
-												</tr>
-											<?php } ?>
-										</tbody>
-									</table>
-								</div>
+										<?php } ?>
+									</tbody>
+								</table>
 							</div>
+						</div>
 
-							<div class="tab-pane fade" id="fade-tab2">
-								<div class="table-responsive col-lg-8">
-									<table class="table table-striped">
-										<thead>
-											<tr>
-												<th>Timestamp</th>
-												<th>Type</th>
-												<th>Internal host</th>
-												<th>Connected IP</th>
-												<th>Host</th>
+						<div class="tab-pane fade" id="fade-tab2">
+							<div class="table-responsive col-lg-8">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th>Timestamp</th>
+											<th>Type</th>
+											<th>Internal host</th>
+											<th>Connected IP</th>
+											<th>Host</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php foreach ($events as $event) { ?>
+											<tr data-id="<?php echo (string) $event['_id']; ?>">
+												<td>
+													<?php echo @date("Y-m-d H:i", $event['ts']->sec);
+													?>
+												</td>
+												<td><?php echo $event['type'];?></td>
+												<td><?php echo $event['orig_h'];?></td>
+												<td><?php echo $event['resp_h'];?></td>
+												<td><?php echo $event['host'];?></td>
 											</tr>
-										</thead>
-										<tbody>
-											<?php foreach ($events as $event) { ?>
-												<tr data-id="<?php echo (string) $event['_id']; ?>">
-													<td>
-														<?php echo @date("Y-m-d H:i", $event['ts']->sec);
-														?>
-													</td>
-													<td><?php echo $event['type'];?></td>
-													<td><?php echo $event['orig_h'];?></td>
-													<td><?php echo $event['resp_h'];?></td>
-													<td><?php echo $event['host'];?></td>
-												</tr>
-											<?php } ?>
-										</tbody>
-									</table>
-								</div>
-								<div class="col-lg-4">
-									<div class="list-group no-border no-padding-top">
-										<a href="#" class="list-group-item">
-											<i class="icon-user"></i> 
-											Name: <?php echo $mf['name']; ?>
-										</a>
-										<a href="#" class="list-group-item">
-											<i class="icon-cash3"></i> References: <?php echo implode( ",", $mf['references'] ); ?>
-										</a>
-										<a href="#" class="list-group-item">
-											<i class="icon-tree7"></i> Tags: <?php echo implode( ",", $mf['tags'] ); ?>
-										</a>
-										<a href="#" class="list-group-item">
-											<i class="icon-users"></i> Groups: <?php echo $mf['author_name']; ?>
-										</a>
-										<a href="#" class="list-group-item">
-											<i class="icon-calendar3"></i> Industries: <?php echo implode( ",", $mf['industries'] ); ?>
-										</a>
-										<a href="#" class="list-group-item">
-											<i class="icon-cog3"></i> Target Country: <?php echo implode( ",", $mf['targeted_countries'] ); ?>
-										</a>
-										<a href="#" class="list-group-item">
-											<i class="icon-cog3"></i> Description: 
-											<div class="col-lg-12 border-left-lg border-left-danger">
-												<?php echo $mf['description']; ?>
-											</div>
-										</a>
-								</div>
+										<?php } ?>
+									</tbody>
+								</table>
+							</div>
+							<div class="col-lg-4">
+								<div class="list-group no-border no-padding-top">
+									<a href="#" class="list-group-item">
+										<i class="icon-user"></i> 
+										Name: <?php echo $mf['name']; ?>
+									</a>
+									<a href="#" class="list-group-item">
+										<i class="icon-cash3"></i> References: <?php echo implode( ",", $mf['references'] ); ?>
+									</a>
+									<a href="#" class="list-group-item">
+										<i class="icon-tree7"></i> Tags: <?php echo implode( ",", $mf['tags'] ); ?>
+									</a>
+									<a href="#" class="list-group-item">
+										<i class="icon-users"></i> Groups: <?php echo $mf['author_name']; ?>
+									</a>
+									<a href="#" class="list-group-item">
+										<i class="icon-calendar3"></i> Industries: <?php echo implode( ",", $mf['industries'] ); ?>
+									</a>
+									<a href="#" class="list-group-item">
+										<i class="icon-cog3"></i> Target Country: <?php echo implode( ",", $mf['targeted_countries'] ); ?>
+									</a>
+									<a href="#" class="list-group-item">
+										<i class="icon-cog3"></i> Description: 
+										<div class="col-lg-12 border-left-lg border-left-danger">
+											<?php echo $mf['description']; ?>
+										</div>
+									</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			
-			<div class="col-md-3"></div>
 		</div>
+		
+		<div class="col-md-3"></div>
 	</div>
 </div>
 <!-- Info modal -->
 <div id="modal_theme_info" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<div class="modal-header bg-info">
+			<div class="modal-header navbar-inverse">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<h6 class="modal-title">Event Details </h6>
 			</div>

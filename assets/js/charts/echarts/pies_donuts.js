@@ -63,25 +63,26 @@ $(function() {
                 // Display toolbox
                 toolbox: {
                     show: true,
-                    x: 'right',
-                    orient: 'horizontal',
+                    // x: 'right',
+                    orient: 'vertical',
                     feature: {
-                        magicType: {
-                            show: true,
-                            title: {
-                                pie: 'Switch to pies',
-                                funnel: 'Switch to funnel',
-                            },
-                            type: ['pie', 'funnel'],
-                            option: {
-                                funnel: {
-                                    x: '25%',
-                                    width: '50%',
-                                    funnelAlign: 'left',
-                                    max: 1700
-                                }
-                            }
-                        },
+                        // magicType: {
+                        //     show: true,
+                        //     title: {
+                        //         pie: 'Switch to pies',
+                        //         funnel: 'Switch to funnel',
+                        //     },
+                        //     type: ['pie', 'funnel'],
+                        //     option: {
+                        //         funnel: {
+                        //             x: '25%',
+                        //             width: '50%',
+                        //             funnelAlign: 'left',
+                        //             max: 1700
+                        //         }
+                        //     }
+                        // },
+
                         restore: {
                             show: true,
                             title: 'Restore'
@@ -98,8 +99,26 @@ $(function() {
                 series: [{
                     name: 'Malware',
                     type: 'pie',
-                    center: ['50%', '50%'],
-                    radius: '50%',
+                    center: ['50%', '60%'],
+                    radius: '70%',
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: false
+                            },
+                            labelLine: {
+                                show: false
+                            }
+                        },
+                        emphasis: {
+                            label: {
+                                show: true
+                            },
+                            labelLine: {
+                                show: true
+                            }
+                        }
+                    },
                     data: pies_series_data
                 }]
 
@@ -139,8 +158,26 @@ $(function() {
                     var my_series = [{
                         name: 'Malware',
                         type: 'pie',
-                        center: ['60%', '60%'],
-                        radius: '60%',
+                        center: ['50%', '60%'],
+                        radius: '70%',
+                        itemStyle: {
+                            normal: {
+                                label: {
+                                    show: false
+                                },
+                                labelLine: {
+                                    show: false
+                                }
+                            },
+                            emphasis: {
+                                label: {
+                                    show: true
+                                },
+                                labelLine: {
+                                    show: true
+                                }
+                            }
+                        },
                         data: pies_series_data
                     }];
                     basic_pie.setSeries(my_series, true);

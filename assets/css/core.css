@@ -7535,7 +7535,9 @@ h6.panel-title,
 }
 
 .table-responsive select {
-    padding: 10px 5px;
+    padding: 8px 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
 }
 
 .table-responsive > thead > tr > th,

@@ -28,8 +28,8 @@ $(function() {
         markerStyle: {
             initial: {
                 r: 5,
-                'fill': '#EBF01E',
-                'fill-opacity': 0.8,
+                'fill': 'red',
+                'fill-opacity': 0.9,
                 'stroke': '#fff',
                 'stroke-width': 1.5,
                 'style': '-webkit-animation: fade 2s infinite; -moz-animation: fade 2s infinite; -o-animation: fade 2s infinite;',
