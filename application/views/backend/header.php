@@ -36,9 +36,13 @@
 		}*/
 		.page-header .breadcrumb-line a{
 			color: #333333;
+			font-size: 16px;
 		}
 		.chart-container.has-scroll {
 		    overflow-x: hidden;
+		}
+		.content{
+			font-size: 14px;
 		}
 	</style>
 	<!-- Core JS files -->
@@ -70,7 +74,7 @@
 	
 	<!-- Setting variable -->
 	<script type="text/javascript">
-		var data_event = [],data_incident = [],data_marker = [], legend_data = [], nodes_data = [], links_data = [], pie_legend_data = [], pies_series_data = [], data_map_table = [];
+		var data_event = [],data_incident = [],data_marker = [], legend_data = [], nodes_data = [], links_data = [], pie_legend_data = [], pies_series_data = [], data_map_table = [], sorting_data = [], sorting_legend = [], domain_data = [], domain_legend = [];
 		<?php 
 		// Set event data
 		foreach ($events as $event) {
@@ -94,15 +98,35 @@
 		foreach ($incidents as $incident) {
 			echo "data_incident.push(" . $incident['firstseen']->usec . ");";
 		} 
+		$domain_data = array();
 		foreach ($domain_connect as $key => $value) {
 			echo "legend_data.push('".$value."');";
 			echo "nodes_data.push({name:'".$value."'});";
+			if (!isset($domain_data[$value])) {
+				$domain_data[$value] = 1;
+			}else{
+				$domain_data[$value]++;
+			}
+		}
+		foreach ($domain_data as $key=>$value) {
+			echo "domain_data.push({name:'".$key."', value:".$value/array_sum($domain_data)*100 ."});";
+			echo "domain_legend.push('".$key."');";
 		}
 
+		$statistic_node = array();
 		foreach ($nodes as $node) {
+			if (isset($statistic_node[$node['orig_h']])) {
+				$statistic_node[$node['orig_h']] ++;
+			}else{
+				$statistic_node[$node['orig_h']] = 1;
+			}
 			echo "nodes_data.push({name:'".$node['orig_h']."'});";
 			echo "links_data.push({source: '".$node['host']."', target: '".$node['orig_h']."', weight: 0.9, name: 'Effectiveness'});";
 			echo "links_data.push({target: '".$node['host']."', source: '".$node['orig_h']."', weight: 1});";
+		}
+		foreach ($statistic_node as $key => $value) {
+			echo "sorting_data.push({name:'".$key."', value:".$value/array_sum($statistic_node)*100 ."});";
+			echo "sorting_legend.push('".$key."');";
 		}
 		$i = 0;
 		foreach ($mfs as $mf) {
@@ -115,9 +139,7 @@
 			pies_series_data.push({
 				value: <?php echo $mf['revision'];?>, name: '<?php echo $name; ?>'
 			});
-		<?php }
-
-		?>
+		<?php }?>
 	</script>
 	<script type="text/javascript" src="assets/js/pages/datatables_advanced.js"></script>
 	<script type="text/javascript" src="assets/js/charts/echarts/pies_donuts.js"></script>

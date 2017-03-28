@@ -25,8 +25,9 @@ $(function () {
         function (ec, limitless) {
 
             // Initialize charts
-            chord_non_ribbon = ec.init(document.getElementById('chord_non_ribbon'), limitless);
-
+            var chord_non_ribbon = ec.init(document.getElementById('chord_non_ribbon'), limitless);
+            var funnel_asc = ec.init(document.getElementById('funnel_asc'), limitless);
+            var top_domain = ec.init(document.getElementById('top_domain'), limitless);
             // Charts setup
             // ------------------------------   
 
@@ -53,11 +54,11 @@ $(function () {
                 },
 
                 // // Add legend
-// legend: {
-//     orient: 'vertical',
-//     x: 'left',
-//     data: legend_data
-// },
+                // legend: {
+                //     orient: 'vertical',
+                //     x: 'left',
+                //     data: legend_data
+                // },
 
 
                 // Add series
@@ -87,14 +88,120 @@ $(function () {
                 ]
             };
             
+
+            //
+            // Funnel sorting options
+            //
+
+            funnel_asc_options = {
+
+                // Add title
+                title: {
+                    text: 'Browser popularity',
+                    subtext: 'Open source information',
+                    x: 'center'
+                },
+
+                // Add tooltip
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c}%"
+                },
+                // Add legend
+                legend: {
+                    x: 'left',
+                    y: 75,
+                    orient: 'vertical',
+                    data: sorting_legend
+                },
+
+                // Enable drag recalculate
+                calculable: true,
+
+                // Add series
+                series: [
+                    {
+                        name: 'Statistics',
+                        type: 'funnel',
+                        x: '25%',
+                        x2: '25%',
+                        y: '17.5%',
+                        height: '80%',
+                        sort: 'ascending',
+                        itemStyle: {
+                            normal: {
+                                label: {
+                                    position: 'left'
+                                }
+                            }
+                        },
+                        data: sorting_data
+                    }
+                ]
+            };
+
+
+            //
+            // Funnel sorting options
+            //
+
+            top_domain_option = {
+
+                // Add title
+                title: {
+                    text: 'Browser popularity',
+                    subtext: 'Open source information',
+                    x: 'center'
+                },
+
+                // Add tooltip
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c}%"
+                },
+                // Add legend
+                legend: {
+                    x: 'left',
+                    y: 75,
+                    orient: 'vertical',
+                    data: domain_legend
+                },
+
+                // Enable drag recalculate
+                calculable: true,
+
+                // Add series
+                series: [
+                    {
+                        name: 'Statistics',
+                        type: 'funnel',
+                        x: '25%',
+                        x2: '25%',
+                        y: '17.5%',
+                        height: '80%',
+                        sort: 'ascending',
+                        itemStyle: {
+                            normal: {
+                                label: {
+                                    position: 'left'
+                                }
+                            }
+                        },
+                        data: domain_data
+                    }
+                ]
+            };
+
             chord_non_ribbon.setOption(chord_non_ribbon_options);
-            
+            funnel_asc.setOption(funnel_asc_options);
+            top_domain.setOption(top_domain_option);
             // Resize charts
             // ------------------------------
 
             window.onresize = function () {
                 setTimeout(function (){
-                    
+                    top_domain.resize();
+                    funnel_asc.resize();
                     chord_non_ribbon.resize();
 
                 }, 200);

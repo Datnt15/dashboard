@@ -27,6 +27,10 @@
 		}
 		.page-header .breadcrumb-line a{
 			color: #333333;
+			font-size: 16px;
+		}
+		.content{
+			font-size: 14px;
 		}
 	</style>
 

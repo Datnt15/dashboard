@@ -161,6 +161,48 @@
 				</div>
 			</div>
 			<div class="col-lg-6 col-xs-12 list-item">
+
+				<!-- Data sorting control -->
+				<div class="panel panel-flat">
+					<div class="panel-heading">
+						<h5 class="panel-title">Top Domain And IP Connected</h5>
+						<div class="heading-elements">
+							<ul class="icons-list">
+		                		<li><a data-action="collapse"></a></li>
+		                		<li><a data-action="reload"></a></li>
+		                		<li><a data-action="close"></a></li>
+		                	</ul>
+	                	</div>
+					</div>
+
+					<div class="panel-body">
+						<div class="tabbable">
+							<ul class="nav nav-tabs nav-tabs-highlight">
+								<li class="active">
+									<a href="#fade-tab1" data-toggle="tab">IP</a>
+									</li>
+								<li>
+									<a href="#fade-tab2" data-toggle="tab">Domain</a>
+								</li>
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane fade in active" id="fade-tab1">
+									<div class="chart-container has-scroll">
+										<div class="chart has-fixed-height has-minimum-width" id="funnel_asc"></div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="fade-tab2">
+									<div class="chart-container has-scroll">
+										<div class="chart has-fixed-height has-minimum-width" id="top_domain"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /data sorting control -->
+			</div>
+			<div class="col-lg-12 col-xs-12 list-item">
 				<!-- Non-ribbon chord -->
 				<div class="panel panel-flat">
 					<div class="panel-heading">

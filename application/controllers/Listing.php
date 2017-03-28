@@ -62,32 +62,35 @@ class Listing extends CI_Controller {
 				</table>
 			</div>
 			<div class="col-lg-4">
-				<div class="list-group no-border no-padding-top">
-					<a href="#" class="list-group-item">
-						<i class="icon-user"></i> 
-						Name: <?php echo $mf['name']; ?>
-					</a>
-					<a href="#" class="list-group-item">
-						<i class="icon-cash3"></i> References: <?php echo implode( ",", $mf['references'] ); ?>
-					</a>
-					<a href="#" class="list-group-item">
-						<i class="icon-tree7"></i> Tags: <?php echo implode( ",", $mf['tags'] ); ?>
-					</a>
-					<a href="#" class="list-group-item">
-						<i class="icon-users"></i> Groups: <?php echo $mf['author_name']; ?>
-					</a>
-					<a href="#" class="list-group-item">
-						<i class="icon-calendar3"></i> Industries: <?php echo implode( ",", $mf['industries'] ); ?>
-					</a>
-					<a href="#" class="list-group-item">
-						<i class="icon-cog3"></i> Target Country: <?php echo implode( ",", $mf['targeted_countries'] ); ?>
-					</a>
-					<a href="#" class="list-group-item">
-						<i class="icon-cog3"></i> Description: 
-						<div class="col-lg-12 border-left-lg border-left-danger">
-							<?php echo $mf['description']; ?>
+				<div class="panel">
+					<div class="panel-heading navbar-inverse">
+						<h6 class="panel-title"><?php echo $mf['name']; ?></h6>
+					</div>
+					<div class="panel-body">
+						<div class="list-group no-border no-padding-top">
+							<a href="#" class="list-group-item">
+								<i class="icon-cash3"></i> References: <?php echo implode( ",", $mf['references'] ); ?>
+							</a>
+							<a href="#" class="list-group-item">
+								<i class="icon-tree7"></i> Tags: <?php echo implode( ",", $mf['tags'] ); ?>
+							</a>
+							<a href="#" class="list-group-item">
+								<i class="icon-users"></i> Groups: <?php echo $mf['author_name']; ?>
+							</a>
+							<a href="#" class="list-group-item">
+								<i class="icon-calendar3"></i> Industries: <?php echo implode( ",", $mf['industries'] ); ?>
+							</a>
+							<a href="#" class="list-group-item">
+								<i class="icon-cog3"></i> Target Country: <?php echo implode( ",", $mf['targeted_countries'] ); ?>
+							</a>
+							<a href="#" class="list-group-item">
+								<i class="icon-cog3"></i> Description: 
+								<div class="col-lg-12 border-left-lg border-left-danger">
+									<?php echo $mf['description']; ?>
+								</div>
+							</a>
 						</div>
-					</a>
+					</div>
 				</div>
 			</div>
 

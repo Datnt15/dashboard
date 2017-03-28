@@ -93,11 +93,12 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="panel panel-success">
-				<div class="panel-heading">
-					<h3 class="panel-title"><?php echo $incidents[0]; ?></h3>
+		<?php foreach ($incidents as $inc) {?>
+			<div class="panel" id="<?php echo str_replace(".", '_',  $inc); ?>">
+				<div class="panel-heading navbar-inverse">
+					<h3 class="panel-title"><?php echo $inc; ?></h3>
 				</div>
-				<?php $host_info = $this->mongo_db->where(array('src_ip' => $incidents[0]))->get('incidents'); 
+				<?php $host_info = $this->mongo_db->where(array('src_ip' => $inc))->get('incidents'); 
 					$malwares = array();
 					$name_mal = array();
 					foreach ($host_info as $inc) {
@@ -176,6 +177,7 @@
 					</div>
 				</div>
 			</div>
+		<?php } ?>
 		</div>
 	</div>
 </div>
@@ -186,20 +188,19 @@
 		$(".list").on('click', 'li', function(event) {
 			var host = $(this).children().remove().end().text().trim();
 			$(this).html('<i class="icon-screen-full"></i> ' + host);
-			$.post(
-				$("base").attr('href') + 'index.php/report/get_malware', 
-				{host: host}, 
-				function(data) {
-					$(".panel.panel-success").html(data);
-				}
-			);
+			host = host.split(".").join("_");
+			console.log(host);
+			$('html, body').animate({
+		        scrollTop: $("#" + host).offset().top - 20
+		    }, 500);
 		});
 		$(".panel.panel-success").on('click', '.panel-body .table tbody tr', function(event) {
+			var _this = $(this);
 			$.post(
 				$("base").attr('href') + 'index.php/report/get_malware', 
 				{mal_id: $(this).attr('data-id')}, 
 				function(data) {
-					$(".panel.panel-success .panel-body .mal_info").html(data);
+					_this.parent().parent().siblings('.mal_info').html(data);
 				}
 			);
 		});
