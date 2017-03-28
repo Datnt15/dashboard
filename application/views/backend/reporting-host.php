@@ -189,7 +189,6 @@
 			var host = $(this).children().remove().end().text().trim();
 			$(this).html('<i class="icon-screen-full"></i> ' + host);
 			host = host.split(".").join("_");
-			console.log(host);
 			$('html, body').animate({
 		        scrollTop: $("#" + host).offset().top - 20
 		    }, 500);

@@ -25,6 +25,9 @@
 			padding: 10px 5px;
 			cursor: pointer;
 		}
+		#my-table .table > tbody > tr > td{
+			padding: 0px 5px;
+		}
 		.page-header .breadcrumb-line a{
 			color: #333333;
 			font-size: 16px;

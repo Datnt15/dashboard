@@ -97,8 +97,7 @@ $(function () {
 
                 // Add title
                 title: {
-                    text: 'Browser popularity',
-                    subtext: 'Open source information',
+                    text: 'Top IP attacked',
                     x: 'center'
                 },
 
@@ -116,12 +115,12 @@ $(function () {
                 },
 
                 // Enable drag recalculate
-                calculable: true,
+                // calculable: true,
 
                 // Add series
                 series: [
                     {
-                        name: 'Statistics',
+                        name: 'IP Information',
                         type: 'funnel',
                         x: '25%',
                         x2: '25%',
@@ -149,15 +148,14 @@ $(function () {
 
                 // Add title
                 title: {
-                    text: 'Browser popularity',
-                    subtext: 'Open source information',
+                    text: 'Top domain attack',
                     x: 'center'
                 },
 
                 // Add tooltip
                 tooltip: {
                     trigger: 'item',
-                    formatter: "{a} <br/>{b}: {c}%"
+                    formatter: "{a} <br/>{b} : {c}%"
                 },
                 // Add legend
                 legend: {
@@ -168,12 +166,12 @@ $(function () {
                 },
 
                 // Enable drag recalculate
-                calculable: true,
+                // calculable: true,
 
                 // Add series
                 series: [
                     {
-                        name: 'Statistics',
+                        name: 'Domain',
                         type: 'funnel',
                         x: '25%',
                         x2: '25%',
@@ -195,6 +193,8 @@ $(function () {
             chord_non_ribbon.setOption(chord_non_ribbon_options);
             funnel_asc.setOption(funnel_asc_options);
             top_domain.setOption(top_domain_option);
+            $("#fade-tab2").removeClass('active');
+            $("#fade-tab2").removeClass('in');
             // Resize charts
             // ------------------------------
 

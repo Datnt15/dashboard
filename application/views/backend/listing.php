@@ -22,7 +22,7 @@
 					<div class="tab-content">
 						<div class="tab-pane fade in active" id="fade-tab1">
 							<div class="table-responsive" id="my-table">
-								<table class="table datatable-columns table-striped">
+								<table class="table table-bordered table-striped">
 									<thead>
 										<tr>
 											<th>Internal host</th>
@@ -81,7 +81,7 @@
 						<div class="tab-pane fade" id="fade-tab2">
 
 							<div class="table-responsive col-lg-8">
-								<table class="table table-striped">
+								<table class="table table-bordered table-striped">
 									<thead>
 										<tr>
 											<th>Timestamp</th>
@@ -218,7 +218,7 @@
 	    });
 	    
 	    // Columns rendering
-	    $('.datatable-columns').dataTable({
+	    $('#my-table .table').dataTable({
 	        "order": [
 	            [1, "desc"]
 	        ],

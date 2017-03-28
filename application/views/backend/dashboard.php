@@ -4,8 +4,6 @@
 	<!-- Content area -->
 	<div class="content">
 
-		
-
 		<!-- Custom markers -->
 		<div class="panel panel-flat">
 			<div class="panel-heading">
@@ -187,12 +185,12 @@
 							</ul>
 							<div class="tab-content">
 								<div class="tab-pane fade in active" id="fade-tab1">
-									<div class="chart-container has-scroll">
+									<div class="chart-container has-scroll col-xs-12">
 										<div class="chart has-fixed-height has-minimum-width" id="funnel_asc"></div>
 									</div>
 								</div>
-								<div class="tab-pane fade" id="fade-tab2">
-									<div class="chart-container has-scroll">
+								<div class="tab-pane fade in active" id="fade-tab2">
+									<div class="chart-container has-scroll col-xs-12">
 										<div class="chart has-fixed-height has-minimum-width" id="top_domain"></div>
 									</div>
 								</div>
@@ -233,7 +231,6 @@
 			&copy; 2015. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
 		</div>
 		<!-- /footer -->
-
 	</div>
 	<!-- /content area -->
 

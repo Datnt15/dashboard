@@ -156,7 +156,8 @@ class Report extends CI_Controller {
 		$data = array();
 		$data['mfs'] 	= $this->mongo_db->distinct("mf", "name");
 		$data["title"] 	= "Reporting Malware Page";
-		$data['mf'] 	= $this->mongo_db->where(array('name' => $data['mfs'][0]))->find_one('mf');
+		// $data['mf'] 	= $this->mongo_db->where(array('name' => $data['mfs'][0]))->find_one('mf');
+		$data['all_mf_info'] = $this->mongo_db->get('mf');
 		
 		$this->load->view("backend/header-listing", $data, FALSE);
 		// $this->load->view("backend/sidebar");
