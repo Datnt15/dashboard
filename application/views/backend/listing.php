@@ -59,9 +59,9 @@
 											}
 											?>
 											<tr>
-												<td><?php echo $incident['src_ip'];?></td>
-												<td><?php echo $incident['count'];?></td>
-												<td><?php echo $name;?></td>
+												<td width="150"><?php echo $incident['src_ip'];?></td>
+												<td width="100"><?php echo $incident['count'];?></td>
+												<td width="500"><?php echo $name;?></td>
 												<td><?php echo @date("Y-m-d H:i", $incident['firstseen']->sec);?></td>
 												<td><?php echo @date("Y-m-d H:i", $incident['lastseen']->sec);?></td>
 												<td>

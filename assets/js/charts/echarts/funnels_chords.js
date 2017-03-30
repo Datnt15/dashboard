@@ -97,7 +97,7 @@ $(function () {
 
                 // Add title
                 title: {
-                    text: 'Top IP attacked',
+                    text: 'Top attacked IPs',
                     x: 'center'
                 },
 
@@ -148,7 +148,7 @@ $(function () {
 
                 // Add title
                 title: {
-                    text: 'Top domain attack',
+                    text: 'Top attacked domains',
                     x: 'center'
                 },
 

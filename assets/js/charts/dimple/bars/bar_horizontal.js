@@ -38,11 +38,11 @@ $(function() {
         // ------------------------------
 
         // Horizontal
-        x = myChart.addCategoryAxis("y", "ts");
+        x = myChart.addCategoryAxis("x", "count");
         x.addOrderRule("count");
 
         // Vertical
-        y = myChart.addMeasureAxis("x", "count");
+        y = myChart.addMeasureAxis("y", "ts");
         // y.addOrderRule("count");
 
 
@@ -55,7 +55,7 @@ $(function() {
             //       new dimple.color("#3498db", "#2980b9", 1), // blue
             // new dimple.color("#e74c3c", "#c0392b", 1), // red
 
-            new dimple.color("rgb(22, 170, 144)", "#27ae60", 1)
+            new dimple.color("rgb(216, 122, 128)", "rgb(255, 185, 128)", 1)
             /*, // green
             new dimple.color("#9b59b6", "#8e44ad", 1), // purple
                 new dimple.color("#e67e22", "#d35400", 1), // orange

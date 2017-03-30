@@ -65,7 +65,7 @@
 				<!-- Pie chart timeline -->
 				<div class="panel panel-flat">
 					<div class="panel-heading">
-						<h2 class="panel-title">Top 10 malwares</h2>
+						<h2 class="panel-title" style="margin-bottom: 21px;">Top 10 malwares</h2>
 						<div class="heading-elements">
 							<ul class="icons-list">
 		                		<li><a data-action="collapse"></a></li>
@@ -88,7 +88,7 @@
 		<!-- Marketing campaigns -->
 		<div class="row list">
 			<div class="col-lg-6 col-xs-12 list-item">
-				<div class="panel panel-flat">
+				<div class="panel panel-flat" style="min-height: 565px;">
 					<div class="panel-heading">
 						<h2 class="panel-title">Unexpected Connections</h2>
 						<div class="heading-elements">
@@ -163,7 +163,7 @@
 				<!-- Data sorting control -->
 				<div class="panel panel-flat">
 					<div class="panel-heading">
-						<h5 class="panel-title">Top Domain And IP Connected</h5>
+						<h2 class="panel-title">Top connected IPs and Domains</h2>
 						<div class="heading-elements">
 							<ul class="icons-list">
 		                		<li><a data-action="collapse"></a></li>

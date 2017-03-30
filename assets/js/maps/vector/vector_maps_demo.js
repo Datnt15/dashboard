@@ -14,12 +14,16 @@ $(function() {
     // Custom markers
     $('.map-world-markers').vectorMap({
         map: 'world_mill_en',
-        backgroundColor: 'rgb(4, 58, 87)',
+        // backgroundColor: 'rgb(4, 58, 87)',
+        backgroundColor: 'transparent',
+        // backgroundColor: 'rgb(4, 17, 37)',
         scaleColors: ['#C8EEFF', '#0071A4'],
         normalizeFunction: 'polynomial',
         regionStyle: {
             initial: {
-                fill: 'rgb(4, 17, 37)'
+                // fill: 'rgb(4, 17, 37)'
+                fill: '#93D389'
+                // fill: '#2ec7c9'
             }
         },
         hoverOpacity: 0.7,
@@ -27,8 +31,8 @@ $(function() {
         zoomOnScroll: false,
         markerStyle: {
             initial: {
-                r: 5,
-                'fill': 'red',
+                r: 7,
+                'fill': '#E77644',
                 'fill-opacity': 0.9,
                 'stroke': '#fff',
                 'stroke-width': 1.5,
